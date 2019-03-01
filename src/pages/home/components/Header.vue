@@ -5,25 +5,30 @@
     </div>
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
-      输入城市景点游玩主题
+      输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xe6aa;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont arrow-icon">&#xe6aa;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 <script>
 export default {
-  name: "HomeHeader"
+  name: "HomeHeader",
+  props: {
+    city: String
+  }
 };
 </script>
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
 .header
   display: flex
-  height: 0.86rem
-  line-height: 0.84rem
+  height: $headerHeight
+  line-height: $headerHeight
   background: $bgColor
   color: #fff
   .header-left
@@ -46,6 +51,7 @@ export default {
     width: 1.24rem
     float: left
     text-align: center
+    color: #fff
     .arrow-icon
       margin-left: -0.04rem
       font-size: 0.24rem
