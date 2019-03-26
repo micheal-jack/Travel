@@ -5,6 +5,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
+import store from './store'
+import 'babel-polyfill'
 import 'styles/reset.css'
 // 1像素边框的问题
 import 'styles/border.css'
@@ -21,7 +23,10 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
-  components: { App: App },
+  store,
+  components: {
+    App: App
+  },
   template: '<App/>'
 })
 
